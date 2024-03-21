@@ -9,8 +9,10 @@ function App() {
   const [filter, setFilter] = useState("");
   
   const filteredData = userdata.filter((data) => {
-    return data["Customer Name"].toLowerCase().includes(filter.toLowerCase());
-    // return data && data["Customer Name"]?.toLowerCase().includes(filter.toLowerCase());
+    return(
+      data["name"].toLowerCase().includes(filter.toLowerCase())
+    )
+    
   });
 
   return (
