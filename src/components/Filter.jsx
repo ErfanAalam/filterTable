@@ -1,6 +1,6 @@
 import React from "react";
 
-const Filter = ({ filter, setFilter, genderFilter, setGenderFilter , activeFilter, setactiveFilter }) => {
+const Filter = ({ filter, setFilter, genderFilter, setGenderFilter , activeFilter, setActiveFilter }) => {
   return (
     <>
       <div className="border-2 w-96 p-10 h-[80vh] ">
@@ -31,16 +31,16 @@ const Filter = ({ filter, setFilter, genderFilter, setGenderFilter , activeFilte
             </select>
           </div>
 
-          <div className="flex space-x-8">
+          <div className="lastseen flex space-x-8">
             <label htmlFor="active">Last Active</label>
             <select
               name=""
               id="active"
-              value={activeFilter}
-              onChange={(e)=>setactiveFilter(e.target.value)}
               className=" bg-gray-500 py-3 text-center rounded-lg w-[50%] text-white"
+              // value={activeFilter}
+              onChange={(e)=>setActiveFilter(e.target.value)}
             >
-              <option value="">All Year</option>
+              <option value="All years">All Year</option>
               <option value="2005">2005</option>
               <option value="2011">2011</option>
               <option value="2015">2015</option>

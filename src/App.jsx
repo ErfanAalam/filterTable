@@ -11,18 +11,18 @@ function App() {
   const [activeFilter, setActiveFilter] = useState("");
   
   const filteredData = userdata.filter((data) => {
-    // return(
-      // data["name"].toLowerCase().includes(filter.toLowerCase())
       
       const nameMatch = data["name"].toLowerCase().includes(filter.toLowerCase());
       const genderMatch = genderFilter === "" || data["gender"] === genderFilter;
-      // const activefilter = activeFilter === "" || data["lastseen"] === activeFilter;
+      const activeMatch = activeFilter === "" || data.lastSeen.slice(data.lastSeen.lastIndexOf("-") + 1) === activeFilter
 
 
-
-      // return (nameMatch && genderMatch && activeFilter);
-      return nameMatch && genderMatch;
-    // )
+      return (
+        nameMatch &&
+        genderMatch  
+        &&
+        activeMatch
+      )
     
   });
 
