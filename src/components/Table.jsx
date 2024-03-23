@@ -6,7 +6,7 @@ const Table = ({ filteredData }) => {
     <div className="flex flex-col ">
       <table className="border-2">
         <thead>
-          <tr className="info flex justify-between text-center">
+          <tr className="info flex ">
             <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">ID</td>
             <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">
               Customer Name
@@ -34,25 +34,25 @@ const Table = ({ filteredData }) => {
           </tr>
         </thead>
 
-        <div className="flex flex-col gap-4">
-          {userdata.map((data) => {
+        <div className="flex flex-col ">
+          {filteredData.map((data,index) => {
             return (
               <tbody>
-                {/* <tr className="info border-2">
+                <tr key={index} className="info border-2">
               {Object.keys(data).map((key, index) => {
                 console.log(data[key]);
                 return (
                   <td
                     key={index}
-                    className="border-2 px-10 h-fit p-2 bg-orange-200 "
+                    className="border-2 px-12 h-fit p-2 bg-orange-200 "
                   >
                     {data[key]}
                   </td>
                 );
               })}
-            </tr> */}
+            </tr>
 
-                {filteredData.map((data, index) => (
+                {/* {filteredData.map((data, index) => (
                   <tr key={index} className="info border-2">
                     {Object.values(data).map((value, index) => (
                       <td
@@ -63,7 +63,7 @@ const Table = ({ filteredData }) => {
                       </td>
                     ))}
                   </tr>
-                ))}
+                ))} */}
               </tbody>
             );
           })}
