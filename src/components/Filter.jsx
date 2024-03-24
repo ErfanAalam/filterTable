@@ -3,8 +3,8 @@ import React from "react";
 const Filter = ({ filter, setFilter, genderFilter, setGenderFilter , activeFilter, setActiveFilter }) => {
   return (
     <>
-      <div className="border-2 w-96 p-10 h-[80vh] ">
-        <form action="/" className="flex flex-col gap-16">
+      <div className="border-2 w-3/12 py-10 px-2 rounded ">
+        <form action="/" className="flex flex-col gap-8">
           <div className="search">
            
             <input
@@ -12,16 +12,16 @@ const Filter = ({ filter, setFilter, genderFilter, setGenderFilter , activeFilte
               placeholder="Search by Customer Name..."
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className=" bg-gray-500 py-3 rounded-lg w-[100%] text-2xl text-white"
+              className=" bg-gray-500 py-3 px-2 rounded-lg w-[100%] text-xl text-white"
             />
           </div>
 
-          <div className="Gender flex space-x-8">
+          <div className="Gender flex items-center justify-between space-x-8">
             <label htmlFor="Gender">Gender</label>
             <select
               name=""
               id="Gender"
-              className=" bg-gray-500 py-3 text-center rounded-lg w-[50%] text-white"
+              className=" bg-gray-500 py-3 px-2 rounded-lg w-[50%] text-white"
               value={genderFilter}
               onChange={(e) => setGenderFilter(e.target.value)}
             >
@@ -31,12 +31,12 @@ const Filter = ({ filter, setFilter, genderFilter, setGenderFilter , activeFilte
             </select>
           </div>
 
-          <div className="lastseen flex space-x-8">
+          <div className="lastseen flex items-center justify-between space-x-8">
             <label htmlFor="active">Last Active</label>
             <select
               name=""
               id="active"
-              className=" bg-gray-500 py-3 text-center rounded-lg w-[50%] text-white"
+              className=" bg-gray-500 py-3 px-2 rounded-lg w-[50%] text-white"
               // value={activeFilter}
               onChange={(e)=>setActiveFilter(e.target.value)}
             >

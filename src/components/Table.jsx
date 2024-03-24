@@ -1,73 +1,51 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import userdata from "./userdata";
 
 const Table = ({ filteredData }) => {
   return (
-    <div className="flex flex-col ">
-      <table className="border-2">
+    <div className="w-9/12 flex flex-col ">
+      <table className="border-2 table-fixed">
         <thead>
-          <tr className="info flex ">
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">ID</td>
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">
+          <tr className="info flex justify-start ">
+            <td className="id border-2 h-fit p-2 bg-orange-200 ">ID</td>
+            <td className="id border-2 h-fit p-2 bg-orange-200 ">
               Customer Name
             </td>
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">Age</td>
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 w-60">
-              Email
-            </td>
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">
-              Salary
-            </td>
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">
-              Order
-            </td>
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">
+            <td className="id border-2 h-fit p-2 bg-orange-200 ">Age</td>
+            <td className="id border-2 h-fit p-2 bg-orange-200">Email</td>
+            <td className="id border-2 h-fit p-2 bg-orange-200 ">Salary</td>
+            <td className="id border-2 h-fit p-2 bg-orange-200 ">Order</td>
+            <td className="id border-2 h-fit p-2 bg-orange-200 ">
               Total Spents
             </td>
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">
-              Gender
-            </td>
-            <td className="id border-2  px-8 h-fit p-2 bg-orange-200 ">
-              Last seen
-            </td>
+            <td className="id border-2 h-fit p-2 bg-orange-200 ">Gender</td>
+            <td className="id border-2 h-fit p-2 bg-orange-200 ">Last seen</td>
             {/* <td className="id border-2 border-black px-8 h-fit w-38">Hobby</td> */}
           </tr>
         </thead>
 
-        <div className="flex flex-col ">
-          {filteredData.map((data,index) => {
-            return (
-              <tbody>
-                <tr key={index} className="info border-2">
-              {Object.keys(data).map((key, index) => {
-                console.log(data[key]);
-                return (
-                  <td
-                    key={index}
-                    className="border-2 px-12 h-fit p-2 bg-orange-200 "
-                  >
-                    {data[key]}
-                  </td>
-                );
-              })}
-            </tr>
-
-                {/* {filteredData.map((data, index) => (
-                  <tr key={index} className="info border-2">
-                    {Object.values(data).map((value, index) => (
+        
+          <tbody>
+            {filteredData.map((data, index) => {
+              return (
+                <tr key={index} className="info flex justify-start">
+                  {Object.keys(data).map((key, index) => {
+                    console.log(data[key]);
+                    return (
                       <td
                         key={index}
-                        className="border-2 px-11 h-fit p-2 bg-orange-200"
+                        className="id border-2 p-2 bg-orange-200"
                       >
-                        {value}
+                        {data[key]}
                       </td>
-                    ))}
-                  </tr>
-                ))} */}
-              </tbody>
-            );
-          })}
-        </div>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        
       </table>
     </div>
   );
